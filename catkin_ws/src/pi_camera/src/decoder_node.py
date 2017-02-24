@@ -15,11 +15,11 @@ class DecoderNode(object):
         self.node_name = rospy.get_name()
         self.active = True
         self.bridge = CvBridge()
-        
+
         self.publish_freq = self.setupParam("~publish_freq",1.0)
         self.publish_duration = rospy.Duration.from_sec(1.0/self.publish_freq)
         self.pub_raw = rospy.Publisher("~image/raw",Image,queue_size=1)
-        self.last_stamp = rospy.Time.now()        
+        self.last_stamp = rospy.Time.now()
         self.sub_compressed_img = rospy.Subscriber("~compressed_image",CompressedImage,self.cbImg,queue_size=1)
         self.sub_switch = rospy.Subscriber("~switch",BoolStamped, self.cbSwitch, queue_size=1)
 
@@ -42,7 +42,7 @@ class DecoderNode(object):
             self.last_stamp = now
         # time_start = time.time()
         np_arr = np.fromstring(msg.data, np.uint8)
-        cv_image = cv2.imdecode(np_arr, cv2.CV_LOAD_IMAGE_COLOR)
+        cv_image = cv2.imdecode(np_arr, 1) # since cv2.CV_LOAD_IMAGE_COLOR = 1 can't work anymore automatically
         # time_1 = time.time()
         img_msg = self.bridge.cv2_to_imgmsg(cv_image, "bgr8")
         # time_2 = time.time()
@@ -55,8 +55,7 @@ class DecoderNode(object):
         # rospy.loginfo("[%s] Took %f sec to conver to Image."%(self.node_name,time_2 - time_1))
         # rospy.loginfo("[%s] Took %f sec to publish."%(self.node_name,time_3 - time_2))
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     rospy.init_node('decoder_low_freq',anonymous=False)
     node = DecoderNode()
     rospy.spin()
-

@@ -1,0 +1,23 @@
+camera_matrix:
+  cols: 3
+  data: [323.6089650569657, 0.0, 320.8194463765819, 0.0, 325.73018721683707, 230.57303766468976,
+    0.0, 0.0, 1.0]
+  rows: 3
+camera_name: turtlebot/camera_node
+distortion_coefficients:
+  cols: 5
+  data: [-0.2784569468235304, 0.0553428692353914, 0.0007152134388795422, 0.0016596339903172824,
+    0.0]
+  rows: 1
+distortion_model: plumb_bob
+image_height: 480
+image_width: 640
+projection_matrix:
+  cols: 4
+  data: [224.1035614013672, 0.0, 322.1931633597378, 0.0, 0.0, 261.9065246582031, 225.3031823149904,
+    0.0, 0.0, 0.0, 1.0, 0.0]
+  rows: 3
+rectification_matrix:
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+  rows: 3
