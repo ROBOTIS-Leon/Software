@@ -1,11 +1,11 @@
 #!/bin/bash
 
 echo "Activating ROS..."
-source /opt/ros/indigo/setup.bash
+source /opt/ros/kinetic/setup.bash
 echo "...done."
 
 echo "Setting up PYTHONPATH."
-export PYTHONPATH=/home/ubuntu/duckietown/catkin_ws/src:$PYTHONPATH
+export PYTHONPATH=/home/catkin_ws/src:$PYTHONPATH
 
 echo "Setup ROS_HOSTNAME."
 export ROS_HOSTNAME=$HOSTNAME.local

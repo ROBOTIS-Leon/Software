@@ -4,13 +4,16 @@ emma: # (Noether)
 
   buffalo_pwd: 27833193
 
+turtlebot:
+  name: turtlebot
+
 shamrock:
-  name: Hang Zhao  
+  name: Hang Zhao
 
 # bmwm3: R.I.P.
 porsche911:
   name: Changhyun Choi
-  mac: 00:0f:60:06:0a:6a  
+  mac: 00:0f:60:06:0a:6a
 
 trex:
   name: jerry
@@ -24,14 +27,14 @@ megaman:
 
 oreo:
   name: Ari
-  
+
 autopilot:
   name: Chandan
 
 light4:
   name: Chandan
 
-light1: 
+light1:
   name: Chandan
 
 light2:
@@ -249,10 +252,10 @@ redbull:
   name: Peter
 
 jack:
-  name: Jack 
+  name: Jack
 
 karissa:
-  name: JihShi Chen     
+  name: JihShi Chen
 
 topbot:
   name: topbot
